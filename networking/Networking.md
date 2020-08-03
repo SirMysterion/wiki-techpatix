@@ -6,8 +6,8 @@ Notes on Addressing
     IPv4
     IPv6
     
-* [Notes on Managment Network](https://wiki.techpatix.com/networking/mgmtnetwork.md)
-* [Notes on Vlans](https://wiki.techpatix.com/networking/vlans.md)
-* [Notes on Addressing](https://wiki.techpatix.com/networking/addressing.md)
-* [TEMP](https://wiki.techpatix.com/networking/mgmtnetwork.md)
-* [TEMP](https://wiki.techpatix.com/networking/mgmtnetwork.md)
+* [Notes on Managment Network](https://wiki.techpatix.com/networking/ManagmentNetwork.md)
+* [Notes on Vlans](https://wiki.techpatix.com/networking/Vlans.md)
+* [Notes on Addressing](https://wiki.techpatix.com/networking/Addressing.md)
+* [TEMP](https://wiki.techpatix.com/networking/ManagmentNetwork.md)
+* [TEMP](https://wiki.techpatix.com/networking/ManagmentNetwork.md)
