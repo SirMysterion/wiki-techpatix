@@ -2,3 +2,4 @@
   * [Networking](https://wiki.techpatix.com/Networking)
   * [Active Directory](https://wiki.techpatix.com/AD/ActiveDirectory.md) 
   * [DFS](https://wiki.techpatix.com/DFS.md) 
+  * [Disaster Recovery](https://wiki.techpatix.com/DR.md)
