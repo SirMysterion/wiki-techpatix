@@ -57,7 +57,8 @@
                 * Shipping OU and Group. 
             * BR Administrator Group 
                 * Like the HQ admin group, this group will hold the administrators for the Branch Location 
-    * Domain Admins 
-            * This group is held above the OUs and represents our permissions to build and configure the Domain. For future use the administrators that are assigned to maintain and control the domain in its entirety will be placed in this group. 
+    * Domain Admins
+        * This group is held above the OUs and represents our permissions to build and configure the Domain. For future use the administrators that are assigned to maintain and control the domain in its entirety will be placed in this group. 
+
 7. Users were imported and placed in groups appropriate to their position 
    * For testing purposes there should be one or two for each department 
