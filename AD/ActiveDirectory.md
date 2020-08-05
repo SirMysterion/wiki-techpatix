@@ -66,3 +66,5 @@
 
 ## Active Directory Adding Users
 
+Open Administrative Tools -->Active Directory Users and Computers.
+
