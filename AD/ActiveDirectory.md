@@ -80,6 +80,11 @@
 *     Password never expires
 *     Account is disabled
 
+
 6. Review the information and select finish if correct.
 
+## Active Directory Adding Users to Groups
 
+1. On the Active Directory Users and Computers console, right-click the account and click    properties.
+
+2. Click _Member Of_ tab and click Add.__
