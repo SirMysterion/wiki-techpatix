@@ -14,7 +14,7 @@ This is the process used to install the DFS share for Techpatix.com allowing for
     * Departments 
         * Read 
 5. Ensure that departmental folders have the correct permission ACLs 
-    *ACCT 
+    * ACCT 
         * HQ-GRP-ACCT 
             * Read Write Execute 
         * BR-GRP-ACCT 
