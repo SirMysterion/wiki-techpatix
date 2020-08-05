@@ -81,6 +81,6 @@
 *     Password never expires
 *     Account is disabled
 
- Review the information and select finish if correct.
+6. Review the information and select finish if correct.
 
 
