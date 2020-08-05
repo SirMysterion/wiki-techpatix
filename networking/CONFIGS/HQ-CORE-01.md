@@ -210,7 +210,7 @@ ip route 0.0.0.0 0.0.0.0 172.16.100.1
 ip ssh version 2
 ip ssh pubkey-chain
   username thomas
-   key-hash ssh-rsa DCFBE51372E518CA682D101128F8C12E 
+   key-hash ssh-rsa [REDACTED] 
 !
 !
 ipv6 router eigrp 1
