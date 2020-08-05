@@ -87,4 +87,8 @@
 
 1. On the Active Directory Users and Computers console, right-click the account and click    properties.
 
-2. Click _Member Of_ tab and click Add.__
+2. Click _Member Of_ tab and click Add.
+
+3. In the Select Groups dialog box, specify a group then click OK to add the groups that you want to the list. Repeat the proccess for      each group.
+
+4. Click OK to complete.
