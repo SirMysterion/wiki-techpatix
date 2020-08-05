@@ -11,4 +11,5 @@ Notes on Addressing
 * ## [Notes on Addressing](https://wiki.techpatix.com/networking/Addressing.md)
 * ## [Notes on Firewall](https://wiki.techpatix.com/networking/Firewall.md)
 * ## [Services](https://wiki.techpatix.com/networking/Services.md)
+* ## [CISCO DEVICE CONFIGS](https://wiki.techpatix.com/networking/CiscoDevConfigs.md)
 * ## [TEMP](https://wiki.techpatix.com/networking/ManagmentNetwork.md)
