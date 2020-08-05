@@ -62,3 +62,7 @@
 
 7. Users were imported and placed in groups appropriate to their position 
    * For testing purposes there should be one or two for each department 
+
+
+## Active Directory Adding Users
+
