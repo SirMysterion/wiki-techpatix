@@ -1,5 +1,5 @@
 ## IPv4
-DHCP is provided by HQ-DC-01 and BR-DC-01 on VLAN10
+DHCP is provided by HQ-DC-01 and BR-DC-01 on VLAN10  
 IP-Helper address is used on HQ-CORE-01, HQ-CORE-02 and BR-SW-01 for VLAN 20 Traffic
 
 DNS is provided by HQ-DC-01 and BR-DC-01
