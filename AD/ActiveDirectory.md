@@ -76,12 +76,6 @@
 
 5. Type a new password, confirm the password, and set up the parameters for the password, click next.
 
-*     Users must change password at next logon (recommended for most users)
-*     User cannot change password
-*     Password never expires
-*     Account is disabled
-   
-
 6. Review the information and select finish if correct.
 
 
