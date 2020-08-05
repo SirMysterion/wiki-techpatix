@@ -1,2 +1,4 @@
   * [Home](https://wiki.sirmysterion.com/Home)
   * [Networking](https://wiki.techpatix.com/Networking)
+  * [Active Directory](https://wiki.techpatix.com/AD/ActiveDirectory.md) 
+  * [DFS](https://wiki.techpatix.com/DFS.md) 

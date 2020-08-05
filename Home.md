@@ -3,6 +3,7 @@
 
 * ## [Networking](https://wiki.techpatix.com/networking/Networking.md) 
 * ## [Active Directory](https://wiki.techpatix.com/AD/ActiveDirectory.md) 
+* ## [DFS](https://wiki.techpatix.com/DFS.md) 
 
 
 ## Wiki Article Creation
