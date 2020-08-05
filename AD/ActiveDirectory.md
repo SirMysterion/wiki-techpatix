@@ -66,5 +66,17 @@
 
 ## Active Directory Adding Users
 
-Open Administrative Tools -->Active Directory Users and Computers.
+1.Open Administrative Tools -->Active Directory Users and Computers.
+
+2.Click on the Domain in which you would like to create users.
+
+3.Right-Click Users, point to New --> User.
+
+4. Enter the first name, last name, logon name and click next.
+
+5.Type a new password, confirm the password, and set up the parameters for the password.
+    Users must change password at next logon (recommended for most users)
+    User cannot change password
+    Password never expires
+    Account is disabled
 
