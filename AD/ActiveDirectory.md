@@ -7,21 +7,17 @@
 4. Joined BR-FS-01 to the domain 
     * Installed file server role and DFS roles 
 5. Added proper subnets to the Sites and Services.  
-    * This was applied once the proper IP addresses were applied: 
     * HQ: 
         * 172.16.110/24 
         * 172.16.120/24 
-        * 172.16.150/24 
+        * 172.16.150/24
+        * 2600:70ff:b856:8110::/64 
+        * 2600:70ff:b856:8120::/64 
+        * 2600:70ff:b856:8150::/64
     * BR: 
         * 172.16.210/24 
         * 172.16.220/24 
         * 172.16.250/24 
-    * IPV6 was handled by Thomas and are as Follows 
-    * HQ: 
-        * 2600:70ff:b856:8110::/64 
-        * 2600:70ff:b856:8120::/64 
-        * 2600:70ff:b856:8150::/64 
-    * BR 
         * 2600:70ff:b856:8210::/64 
         * 2600:70ff:b856:8220::/64 
         * 2600:70ff:b856:8250::/64 
