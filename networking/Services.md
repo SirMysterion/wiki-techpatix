@@ -9,6 +9,6 @@ DNS is provided by HQ-DC-01 and BR-DC-01
 
 
 ## Web Services
-HQ-FS-01 is hosting an IIS Service
-Port 80 = HTTP to HTTPS Re-write rule 
+HQ-FS-01 is hosting an IIS Service  
+Port 80 = HTTP to HTTPS Re-write rule   
 Port 433 = internal.techpatix.com as well as www.techpatix.com (split DNS)
