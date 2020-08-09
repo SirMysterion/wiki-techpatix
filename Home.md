@@ -6,6 +6,7 @@
 * ## [DFS](https://wiki.techpatix.com/DFS.md) 
 * ## [NMS](https://wiki.techpatix.com/NMS.md) 
 * ## [Disaster Recovery](https://wiki.techpatix.com/DR.md) 
+* ## [Web Hosting](https://wiki.techpatix.com/webhosting/Home.md) 
 
 
 ## Wiki Article Creation
@@ -13,3 +14,4 @@
 
 
 * [markdown tutorials](http://www.markdowntutorial.com/)
+
