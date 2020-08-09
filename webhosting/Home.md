@@ -4,7 +4,7 @@ Techpatix Landing Page and Wiki Site are developed using HTML, CSS, Bootstrap, a
 
 The landing page is hosted as the main domain and the Wiki page is created and hosted as sub-domain of Techpatix. URLs as listed below:  
 
-[https://www.techpatix.com](https://www.techpatix.com) 
+[https://www.techpatix.com](https://www.techpatix.com)  
 [https://wiki.techpatix.com/Home](https://wiki.techpatix.com/Home) 
 
 Company Website is built as a Complete Responsive site using Responsive Web Designing (RWD), where users can access the site from any device across the world and the website will fit into the device size.  
