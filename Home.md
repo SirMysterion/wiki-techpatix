@@ -1,4 +1,4 @@
-# Capston Project (PROJ-354-NA)
+# Capstone Project (PROJ-354-NA)
 ## techpatix Wiki
 
 * ## [Networking](https://wiki.techpatix.com/networking/Networking.md) 
