@@ -1,5 +1,5 @@
+
 # PAT
----
 
 Both HQ and Branch sites were configured with Port Address Translation as follows:
 ## HQ
@@ -23,4 +23,21 @@ access-list 100 permit ip 172.16.150.0 0.0.0.255 any
 
 ## BR
 ```
+interface G0/1
+ip nat inside
+interface G0/6
+ip nat outiside
+```
+```
+ip nat inside source list 100 interface G0/6 overload
+```
+```
+access-list 100 permit ip 172.16.200.0 0.0.0.255 any
+access-list 100 permit ip 172.16.210.0 0.0.0.255 any
+access-list 100 permit ip 172.16.220.0 0.0.0.255 any
+access-list 100 permit ip 172.16.250.0 0.0.0.255 any
+```
 
+---
+
+# Static NAT & Port Forwarding
