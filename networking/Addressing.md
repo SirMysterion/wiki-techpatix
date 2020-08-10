@@ -16,6 +16,35 @@
 | BR-DC-01.techpatix.com    | 172.16.210.10 | VLAN 10  |
 | BR-FS-01.techpatix.com    | 172.16.210.15 | VLAN 10  |
 
+## EtherChannel
+The following is the configuration for the routed EtherChannel link between Core HQ Switches:
+### Core-01
+```
+interface G3/2-3/3
+channel-group 1 mode on
+```
+```
+interface port-channel 1 
+no switchport
+ip add 172.16.100.9 255.255.255.252
+```
+
+### Core-02
+```
+interface G3/2-3/3
+channel-group 1 mode on
+```
+```
+interface port-channel 1 
+no switchport
+ip add 172.16.100.10 255.255.255.252
+```
+
+
+---
+
+
+
 # IPv6
 IPv6 is provided via Hurricane Electric's [Tunnel Broker](https://tunnelbroker.net/) Service. The tunnel is terminated on the Edge router as a 6in4 tunnel. Each tunnel is provided a point to point /64 subnet address as well an assigned routed /48 network.
 
@@ -43,7 +72,7 @@ IPv6 is provided via Hurricane Electric's [Tunnel Broker](https://tunnelbroker.n
 
 ---
 
-The following is the configurations for HQs IPv6 Tunnel
+The following is the configuration for HQs IPv6 Tunnel:
 ```
 interface Tunnel6
  description Hurricane Electric IPv6 Tunnel Broker
@@ -55,5 +84,11 @@ interface Tunnel6
  tunnel mode ipv6ip
  tunnel destination 216.66.77.230
 ```
+
+
+
+---
+
+
 
 
