@@ -48,4 +48,9 @@ ip nat inside source static tcp 172.16.110.15 80 interface G0/6 80
 ip nat inside source static tcp 172.16.110.15 443 interface G0/6 443
 ```
 ```
-
+ip access-list extended OUTSIDE-TO-INSIDE
+permit tcp any host 172.16.110.15 eq www
+permit tcp any host 172.16.110.15 eq 443
+permit tcp any host 172.16.110.15 eq ftp
+deny ip any any
+```
