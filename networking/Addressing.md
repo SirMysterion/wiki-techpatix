@@ -17,7 +17,7 @@
 | BR-FS-01.techpatix.com    | 172.16.210.15 | VLAN 10  |
 
 # IPv6
-IPv6 is porvided via Hurricane Electric's [Tunnel Broker](https://tunnelbroker.net/) Service. The tunnel is terminated on the Edge router as a 6in4 tunnel. Each tunnel is provided a point to point /64 subnet address as well an assigned routed /48 network.
+IPv6 is provided via Hurricane Electric's [Tunnel Broker](https://tunnelbroker.net/) Service. The tunnel is terminated on the Edge router as a 6in4 tunnel. Each tunnel is provided a point to point /64 subnet address as well an assigned routed /48 network.
 
 |          | Tunnel Endpoints     | Routed /64: (Not In use) | Routed /48:        |
 | -------- |:--------------------:| :-----------------------:| :-----------------:|
