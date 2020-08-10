@@ -1,7 +1,6 @@
-
 # PAT
 
-Both HQ and Branch sites were configured with Port Address Translation as follows:
+Both HQ and Branch sites were configured with Port Address Translation on Edge Routers as follows:
 ## HQ
 ```
 interface G0/1-G0/2
@@ -40,4 +39,13 @@ access-list 100 permit ip 172.16.250.0 0.0.0.255 any
 
 ---
 
-# Static NAT & Port Forwarding
+# Port Forwarding
+
+HQ site Edge Router was configured with port forwarding to allow external addresses to reach the internal file server:
+
+```
+ip nat inside source static tcp 172.16.110.15 80 interface G0/6 80
+ip nat inside source static tcp 172.16.110.15 443 interface G0/6 443
+```
+```
+
