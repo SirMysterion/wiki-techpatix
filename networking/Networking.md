@@ -10,6 +10,7 @@ Notes on Addressing
 * ## [Notes on Vlans](https://wiki.techpatix.com/networking/Vlans.md)
 * ## [Notes on Addressing](https://wiki.techpatix.com/networking/Addressing.md)
 * ## [Notes on Firewall](https://wiki.techpatix.com/networking/Firewall.md)
+* ## [Notes on NAT](https://wiki.techpatix.com/networking/NAT.md)
 * ## [Notes on VPN](https://wiki.techpatix.com/networking/VPN.md)
 * ## [Services](https://wiki.techpatix.com/networking/Services.md)
 * ## [CISCO DEVICE CONFIGS](https://wiki.techpatix.com/networking/CiscoDevConfigs.md)
