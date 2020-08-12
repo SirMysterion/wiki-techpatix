@@ -1,7 +1,7 @@
 ```
 !
-! Last configuration change at 21:13:15 UTC Mon Jul 27 2020
-! NVRAM config last updated at 20:49:28 UTC Mon Jul 27 2020
+! Last configuration change at 03:33:29 UTC Wed Aug 5 2020
+! NVRAM config last updated at 03:33:30 UTC Wed Aug 5 2020
 !
 version 15.2
 service timestamps debug datetime msec
@@ -23,6 +23,7 @@ username rajesh password 0  [REDACTED]
 username brennan password 0  [REDACTED]
 username daniel password 0  [REDACTED]
 username karanvir password 0  [REDACTED]
+no aaa new-model
 !
 !
 !
@@ -42,8 +43,8 @@ ip dhcp pool vlan10
 ip domain-list techpatix.com
 no ip domain-lookup
 ip domain-name techpatix.com
-ip name-server 2600:70FF:B856:8210::10
 ip name-server 2001:470:3857:8110::10
+ip name-server 2001:470:3858:8210::10
 ip cef
 ipv6 unicast-routing
 ipv6 cef
@@ -115,6 +116,7 @@ interface Vlan10
 !
 interface Vlan20
  ip address 172.16.220.1 255.255.255.0
+ ip helper-address 172.16.210.10 
  ipv6 address FE80::1 link-local
  ipv6 address 2001:470:3858:8220::1/64
  ipv6 eigrp 1

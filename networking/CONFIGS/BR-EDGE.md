@@ -1,7 +1,7 @@
 ```
 !
-! Last configuration change at 17:15:29 UTC Wed Aug 5 2020
-! NVRAM config last updated at 17:09:46 UTC Wed Aug 5 2020 by ansible
+! Last configuration change at 01:16:53 UTC Thu Aug 6 2020
+! NVRAM config last updated at 01:46:35 UTC Thu Aug 6 2020
 !
 version 15.4
 service timestamps debug datetime msec
@@ -139,9 +139,26 @@ zone-pair security OUT-TO-SELF source OUTSIDE destination self
 !
 !
 !
+crypto isakmp policy 10
+ encr aes 256
+ authentication pre-share
+ group 5
+ lifetime 3600
+crypto isakmp key sMpw8hXqELa9gEG7qWYQ address 172.16.74.100  
+!
+crypto ipsec security-association lifetime seconds 1800
+!
+crypto ipsec transform-set 50 ah-sha-hmac esp-aes 256 esp-sha-hmac 
+ mode tunnel
 !
 !
 !
+crypto map MYMAP 10 ipsec-isakmp 
+ set peer 172.16.74.100
+ set security-association lifetime seconds 900
+ set transform-set 50 
+ set pfs group5
+ match address 101
 !
 !
 !
@@ -197,6 +214,7 @@ interface GigabitEthernet0/3
  speed auto
  media-type rj45
  ipv6 address autoconfig
+ crypto map MYMAP
 !
 interface GigabitEthernet0/4
  no ip address
@@ -317,6 +335,7 @@ access-list 100 permit ip 172.16.200.0 0.0.0.255 any
 access-list 100 permit ip 172.16.210.0 0.0.0.255 any
 access-list 100 permit ip 172.16.220.0 0.0.0.255 any
 access-list 100 permit ip 172.16.250.0 0.0.0.255 any
+access-list 101 permit gre any any
 access-list 105 permit ip any host 216.66.77.230
 access-list 105 permit ip host 216.66.77.230 any
 access-list 105 deny   ip any any

@@ -1,6 +1,6 @@
 ```
 !
-! Last configuration change at 15:16:29 UTC Thu Jul 23 2020
+! Last configuration change at 05:38:53 UTC Sun Aug 9 2020
 !
 version 15.2
 service timestamps debug datetime msec
@@ -34,8 +34,8 @@ no aaa new-model
 ip domain-list techpatix.com
 no ip domain-lookup
 ip domain-name techpatix.com
-ip name-server 2600:70FF:B856:8210::10
 ip name-server 2001:470:3857:8110::10
+ip name-server 2001:470:3858:8210::10
 ip cef
 ipv6 unicast-routing
 ipv6 cef
@@ -61,6 +61,8 @@ vlan internal allocation policy ascending
 !
 !
 interface GigabitEthernet0/0
+ switchport access vlan 10
+ switchport mode access
  media-type rj45
  negotiation auto
 !
@@ -155,7 +157,7 @@ ip route 0.0.0.0 0.0.0.0 172.16.150.254
 ip ssh version 2
 ip ssh pubkey-chain
   username thomas
-   key-hash ssh-rsa  [REDACTED] 
+   key-hash ssh-rsa [REDACTED] 
 !
 !
 ipv6 route ::/0 2001:470:3857:8150::1
@@ -164,6 +166,7 @@ ipv6 route ::/0 2001:470:3857:8150::1
 snmp-server community techpatix RO
 !
 control-plane
+!
 !
 line con 0
  logging synchronous

@@ -1,6 +1,7 @@
 ```
 !
-! Last configuration change at 21:13:03 UTC Mon Jul 27 2020
+! Last configuration change at 23:43:41 UTC Tue Aug 4 2020 by ansible
+! NVRAM config last updated at 23:54:22 UTC Tue Aug 4 2020 by ansible
 !
 version 15.2
 service timestamps debug datetime msec
@@ -33,8 +34,8 @@ no aaa new-model
 !
 ip domain-list techpatix.com
 ip domain-name techpatix.com
-ip name-server 2600:70FF:B856:8210::10
 ip name-server 2001:470:3857:8110::10
+ip name-server 2001:470:3858:8210::10
 ip cef
 no ipv6 cef
 !

@@ -1,6 +1,6 @@
 ```
 !
-! Last configuration change at 15:16:35 UTC Thu Jul 23 2020
+! Last configuration change at 06:13:27 UTC Thu Aug 6 2020
 !
 version 15.2
 service timestamps debug datetime msec
@@ -42,8 +42,8 @@ ip dhcp pool vlan10
 ip domain-list techpatix.com
 no ip domain-lookup
 ip domain-name techpatix.com
-ip name-server 2600:70FF:B856:8210::10
 ip name-server 2001:470:3857:8110::10
+ip name-server 2001:470:3858:8210::10
 ip cef
 ipv6 unicast-routing
 ipv6 cef
@@ -165,6 +165,7 @@ interface Vlan10
 !
 interface Vlan20
  ip address 172.16.120.2 255.255.255.0
+ ip helper-address 172.16.110.10 
  standby version 2
  standby 1 ipv6 FE80::1
  standby 1 preempt
@@ -218,6 +219,7 @@ ipv6 router eigrp 1
 snmp-server community techpatix RO
 !
 control-plane
+!
 !
 line con 0
  logging synchronous

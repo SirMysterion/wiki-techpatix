@@ -1,6 +1,6 @@
 ```
 !
-! Last configuration change at 23:33:19 UTC Mon Jul 27 2020
+! Last configuration change at 11:31:13 UTC Sat Aug 8 2020
 !
 version 15.4
 service timestamps debug datetime msec
@@ -37,8 +37,8 @@ mmi snmp-timeout 180
 !
 ip domain list techpatix.com
 ip domain name techpatix.com
-ip name-server 2600:70FF:B856:8210::10
 ip name-server 2001:470:3857:8110::10
+ip name-server 2001:470:3858:8210::10
 ip cef
 ipv6 unicast-routing
 ipv6 cef
@@ -49,13 +49,13 @@ multilink bundle-name authenticated
 cts logging verbose
 !
 !
-username ansible privilege 15 password 0 [REDACTED]
-username thomas privilege 15 secret 5  [REDACTED]
-username bradyn privilege 15 password 0  [REDACTED]
-username rajesh privilege 15 password 0  [REDACTED]
-username brennan privilege 15 password 0  [REDACTED]
-username daniel privilege 15 password 0  [REDACTED]
-username karanvir privilege 15 password 0  [REDACTED]
+username ansible privilege 15 password 0  [REDACTED]
+username thomas secret 5 [REDACTED]
+username bradyn password 0  [REDACTED]
+username rajesh password 0  [REDACTED]
+username brennan password 0  [REDACTED]
+username daniel password 0  [REDACTED]
+username karanvir password 0  [REDACTED]
 !
 redundancy
 !
@@ -63,7 +63,7 @@ redundancy
 ip ssh version 2
 ip ssh pubkey-chain
   username thomas
-   key-hash ssh-rsa  [REDACTED] 
+   key-hash ssh-rsa [REDACTED] 
 !
 class-map type inspect match-any Proto41-CLASS
  match access-group 105
@@ -138,9 +138,26 @@ zone-pair security OUT-TO-SELF source OUTSIDE destination self
 !
 !
 !
+crypto isakmp policy 10
+ encr aes 256
+ authentication pre-share
+ group 5
+ lifetime 3600
+crypto isakmp key sMpw8hXqELa9gEG7qWYQ address 172.16.78.100  
+!
+crypto ipsec security-association lifetime seconds 1800
+!
+crypto ipsec transform-set 50 ah-sha-hmac esp-aes 256 esp-sha-hmac 
+ mode tunnel
 !
 !
 !
+crypto map MYMAP 10 ipsec-isakmp 
+ set peer 172.16.78.100
+ set security-association lifetime seconds 900
+ set transform-set 50 
+ set pfs group5
+ match address 101
 !
 !
 !
@@ -199,6 +216,7 @@ interface GigabitEthernet0/3
  speed auto
  media-type rj45
  ipv6 address autoconfig
+ crypto map MYMAP
 !
 interface GigabitEthernet0/4
  no ip address
@@ -265,6 +283,8 @@ no ip http server
 no ip http secure-server
 ip nat inside source list 100 interface GigabitEthernet0/6 overload
 ip nat inside source static tcp 172.16.110.15 80 interface GigabitEthernet0/6 80
+ip nat inside source static tcp 172.16.110.15 443 interface GigabitEthernet0/6 443
+ip nat inside source static tcp 172.16.110.15 21 interface GigabitEthernet0/6 21
 ip route 0.0.0.0 0.0.0.0 172.17.17.1
 ip route 172.16.78.0 255.255.255.0 172.16.74.1
 !
@@ -277,6 +297,8 @@ ip access-list extended OUTSIDE-TO-INSIDE
  permit udp any eq domain any
  permit udp any any eq ntp
  permit tcp any host 172.16.110.15 eq www
+ permit tcp any host 172.16.110.15 eq 443
+ permit tcp any host 172.16.110.15 eq ftp
  deny   ip any any
 ip access-list extended OUTSIDE-TO-SELF
  permit 41 any any
@@ -322,6 +344,7 @@ access-list 100 permit ip 172.16.100.0 0.0.0.255 any
 access-list 100 permit ip 172.16.110.0 0.0.0.255 any
 access-list 100 permit ip 172.16.120.0 0.0.0.255 any
 access-list 100 permit ip 172.16.150.0 0.0.0.255 any
+access-list 101 permit gre any any
 access-list 105 permit ip any host 216.66.77.230
 access-list 105 permit ip host 216.66.77.230 any
 access-list 105 deny   ip any any
@@ -341,14 +364,6 @@ ipv6 access-list OUTSIDE-TO-INSIDE_v6
  permit udp 2600:70FF:B856::/48 any eq 3389
  permit tcp any any eq 10050
  permit tcp any any eq 10051
- permit tcp 2600:70FF:B856::/48 host 2600:70FF:B856:8110::10 eq 3389
- permit udp 2600:70FF:B856::/48 host 2600:70FF:B856:8110::10 eq 3389
- permit tcp 2600:70FF:B856::/48 host 2600:70FF:B856:8110::15 eq 3389
- permit udp 2600:70FF:B856::/48 host 2600:70FF:B856:8110::15 eq 3389
- permit tcp any host 2600:70FF:B856:8110::10 eq 10050
- permit tcp any host 2600:70FF:B856:8110::10 eq 10051
- permit tcp any host 2600:70FF:B856:8110::15 eq 10050
- permit tcp any host 2600:70FF:B856:8110::15 eq 10051
  permit tcp any host 2001:470:3857:8110::10 eq 10050
  permit tcp any host 2001:470:3857:8110::10 eq 10051
  permit tcp any host 2001:470:3857:8110::15 eq 10050
@@ -359,6 +374,9 @@ ipv6 access-list OUTSIDE-TO-INSIDE_v6
  permit udp any host 2001:470:3857:8110::10 eq 3389
  permit tcp any host 2001:470:3857:8110::15 eq 3389
  permit udp any host 2001:470:3857:8110::15 eq 3389
+ permit tcp any host 2001:470:3857:8110::15 eq ftp
+ permit tcp any host 2001:470:3857:8110::15 eq www
+ permit tcp any host 2001:470:3857:8110::15 eq 443
  sequence 4294967294 deny ipv6 any any
 !
 ipv6 access-list OUTSIDE-TO-SELF_v6
